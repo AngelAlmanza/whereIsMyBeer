@@ -1,3 +1,10 @@
+:root {
+    --color-fondo: #EFFFFD;
+    --color-uno: #B8FFF9;
+    --color-dos: #85F4FF;
+    --color-tres: #42C2FF;
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -7,6 +14,10 @@
 
 html {
     font-size: 62.5%;
+}
+
+body {
+    background-color: var(--color-fondo);
 }
 
 .container {
@@ -35,7 +46,17 @@ button {
     border-radius: 8px;
     border: none;
     font-size: 1.4rem;
+    background-color: var(--color-uno);
 }
+
+button a {
+    text-decoration: none;
+    color: initial;
+}
+
+/* button:hover {
+    cursor: pointer;
+} */
 
 footer {
     margin-top: 50px;
@@ -44,7 +65,9 @@ footer {
 
 footer p{
     font-size: 1.2rem;
+    font-weight: bold;
     text-align: center;
+    color: var(--color-tres);
 }
 
 @media (min-width: 900px) {
