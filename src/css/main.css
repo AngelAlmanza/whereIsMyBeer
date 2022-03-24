@@ -116,3 +116,104 @@ footer p{
     font-size: 1.8rem;
     margin-bottom: 40px;
 }
+
+/* Estilos de la pestaña de juego */
+
+.graph-container {
+    width: 600px;
+    height: 400px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.nodo {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    z-index: 1;
+    background-color: var(--color-uno);
+    border: 1px solid var(--color-dos);
+}
+
+.nodo-a {
+    left: 70px;
+    top: 20px;
+}
+
+.nodo-b {
+    left: 140px;
+    top: 150px;
+}
+
+.nodo-c {
+    left: 300px;
+    top: 130px;
+}
+
+.nodo-d {
+    left: 300px;
+    top: 250px;
+}
+
+.nodo-e {
+    left: 160px;
+    top: 290px;
+}
+
+.nodo-f {
+    left: 450px;
+    top: 200px;
+}
+
+.arista {
+    height: 5px;
+    width: 120px;
+    position: absolute;
+    background-color: var(--color-tres);
+}
+
+.arista-1 {
+    top: 100px;
+    left: 70px;
+    transform: rotate(60deg);
+}
+
+.arista-2 {
+    top: 170px;
+    left: 190px;
+    transform: rotate(-10deg);
+}
+
+.arista-3 {
+    top: 300px;
+    left: 200px;
+    transform: rotate(-20deg);
+}
+
+.arista-4 {
+    top: 250px;
+    left: 120px;
+    transform: rotate(80deg);
+}
+
+.arista-5 {
+    top: 230px;
+    left: 270px;
+    transform: rotate(100deg);
+}
+
+.arista-6 {
+    top: 250px;
+    left: 350px;
+    transform: rotate(-20deg);
+}
+
+.arista-7 {
+    top: 190px;
+    left: 350px;
+    transform: rotate(30deg);
+}
