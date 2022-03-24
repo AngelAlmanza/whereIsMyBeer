@@ -49,9 +49,17 @@ main {
     background-color: var(--color-uno);
 }
 
+.input-list {
+    text-align: center;
+}
+
 button a {
     text-decoration: none;
     color: initial;
+}
+
+button a:hover {
+    text-decoration: underline;
 }
 
 
@@ -73,4 +81,38 @@ footer p{
         flex-direction: row;
         justify-content: space-evenly;
     }
+}
+
+/* Estilos de las instrucciones */
+.instrucciones {
+    font-size: 3.5rem;
+}
+
+.main-comojugar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 10px;
+}
+
+
+.main-comojugar a {
+    font-size: 1.6rem;
+    text-decoration: none;
+    color: initial;
+}
+
+.main-comojugar a:hover {
+    text-decoration: underline;
+}
+
+.main-comojugar h3 {
+    font-size: 1.5rem;
+    margin: 20px 0;
+}
+
+.explicacion, .main-instrucciones {
+    font-size: 1.8rem;
+    margin-bottom: 40px;
 }

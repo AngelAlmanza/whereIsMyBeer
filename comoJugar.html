@@ -8,9 +8,52 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Hubballi&display=swap" rel="stylesheet">
+    <link rel="icon" href="./src/icons/jarro-de-cerveza.png">
     <link rel="stylesheet" href="./src/css/main.css">
 </head>
 <body>
-    
+    <div class="container">
+        <header>
+            <h2 class="instrucciones">Como Jugar</h2>
+        </header>
+        <main class="main-comojugar">
+            <p class="explicacion">
+                Para jugar este juego usaremos el algoritmo de <b>Djikstra</b>, el cual nos permitira encontrar la ruta mas corta entre un nodo y otro.
+                Si no conoces este algoritmo puedes visitar el video que dejamos a 
+                continuacion.
+            </p>
+            <a href="https://www.youtube.com/watch?v=fgdCNuGPJnw">Algoritmo Djikstra</a>
+            <h3>Pasos para comenzar a jugar</h3>
+            <ol class="main-instrucciones">
+                <li>Eligir una dificultad</li>
+                <p class="explicacion">
+                    Existen 3 dificultades, dificultad 1, dificultad 2 y dificultad 3
+                    cada una mas dificil que la anterior, si no eliges dificultad o elijes
+                    una que no existe se te asignara la dificultad 1.
+                </p>
+                <li>Dar clic en Jugar</li>
+                <p class="explicacion">
+                    Esto nos llevara a la pantalla de juego, donde se generara un grafo
+                    con pesos generados aleatoriamente, tu trabajo sera ayudar a Lorei a
+                    llegar a sus cervezas encontrando la ruta mas corta
+                </p>
+                <li>Evita el exceso</li>
+            </ol>
+            <section class="main-regresar">
+                <button class="secondary-button">
+                    <a href="./index.html">Regresar</a>
+                </button>
+            </section>
+        </main>
+        <footer>
+            <p>
+                Este proyecto ha sido creado con el fin de desarrollar un proyecto en el cual se use una estructura de datos, en este caso usaremos los grafos ponderados y el algoritmo de Djikstra como mecanica principal de nuestro videojuego.
+            </p>
+            <br>
+            <p>
+                Este proyecto ha sido realizado por Angel Almanza y Lorei Bustos alumnos de la UABCS.
+            </p>
+        </footer>
+    </div>
 </body>
 </html>
