@@ -217,3 +217,46 @@ footer p{
     left: 350px;
     transform: rotate(30deg);
 }
+
+.peso {
+    height: 20px;
+    width: 30px;
+    position: absolute;
+    font-size: 2rem;
+    text-align: center;
+}
+
+.peso-1 {
+    top: 100px;
+    left: 150px;
+}
+
+.peso-2 {
+    top: 140px;
+    left: 230px;
+}
+
+.peso-3 {
+    top: 250px;
+    left: 140px;
+}
+
+.peso-4 {
+    top: 310px;
+    left: 250px;
+}
+
+.peso-5 {
+    top: 210px;
+    left: 290px;
+}
+
+.peso-6 {
+    top: 170px;
+    left: 420px;
+}
+
+.peso-7 {
+    top: 260px;
+    left: 400px;
+}
