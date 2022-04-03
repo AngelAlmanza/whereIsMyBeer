@@ -18,12 +18,12 @@ class Grafo {
     }
 
     rellenar() {
-        this.data.A = [0, this.generarPeso(), 0, 0, 0, 0, [false, true, false, false, false, false]];
-        this.data.B = [this.data.A[1], 0, this.generarPeso(), 0, this.generarPeso(), 0, [true, false, true, false, true, false]];
-        this.data.C = [0, this.data.B[2], 0, this.generarPeso(), 0, this.generarPeso(), [false, true, false, true, false, true]];
-        this.data.D = [0, 0, this.data.C[3], 0, this.generarPeso(), this.generarPeso(), [false, false, true, false, true, true]];
-        this.data.E = [0, this.data.B[4], 0, this.data.D[4], 0, 0, [false, true, false, true, false, false]];
-        this.data.F = [0, 0, this.data.C[5], this.data.D[5], 0, 0, [false, false, true, true, false, false]];
+        this.data.A = [Infinity, this.generarPeso(), Infinity, Infinity, Infinity, Infinity];
+        this.data.B = [this.data.A[1], Infinity, this.generarPeso(), Infinity, this.generarPeso(), Infinity];
+        this.data.C = [Infinity, this.data.B[2], Infinity, this.generarPeso(), Infinity, this.generarPeso()];
+        this.data.D = [Infinity, Infinity, this.data.C[3], Infinity, this.generarPeso(), this.generarPeso()];
+        this.data.E = [Infinity, this.data.B[4], Infinity, this.data.D[4], Infinity, Infinity];
+        this.data.F = [Infinity, Infinity, this.data.C[5], this.data.D[5], Infinity, Infinity];
     }
 
     alterarGrafo() {
@@ -43,8 +43,49 @@ class Grafo {
         peso7.innerText = this.data.D[5];
     }
 
-    dijkstra() {
+    dijkstra(path,index){
+        var m = path && path.length;
+        var n = m && path[0].length;
 
+        if(m && n && m===n && index < n){
+            // Inicializar distancia
+            var dis = [];
+            var i;
+            for(i = 0; i< n;i++){
+                dis.push(path[index][i]);
+            }
+            var flag = [];// Se usa para identificar si se determina la distancia del número de índice a otros vértices
+            for(i = 0; i < n; i++ ){
+                flag.push(false)
+            }
+            flag[index] = true;
+
+            var min,minIndex;
+            for(i = 0;i < n;i++){
+                min = Infinity;
+                // Encuentre el índice correspondiente a la distancia más corta desde los puntos inciertos restantes al índice
+                for(var j = 0; j < n; j++){
+                    if(!flag[j] && dis[j] < min){
+                        min = dis[j];
+                        minIndex = j;
+                    }
+                }
+                flag[minIndex] = true;// Identifica que la distancia desde el índice hasta este vértice ha sido confirmada
+                for(var k = 0; k < n; k++){
+                    // Juzgar si hay un camino entre minIndex y k
+                    if(path[minIndex][k] < Infinity){
+                        // Actualizar distancia
+                        if(dis[k] > dis[minIndex] + path[minIndex][k]){
+                            dis[k] = dis[minIndex] + path[minIndex][k];
+                        }
+                    }
+                }
+            }
+            return dis;
+        }
+        else{
+            throw new Error("Los datos son incorrectos")
+        }
     }
 }
 
