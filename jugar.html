@@ -13,6 +13,9 @@
 </head>
 <body>
     <div class="container">
+        <div class="character-container">
+            <img src="./src/images/lorei-inicio.png" alt="Lorei">
+        </div>
         <div class="graph-container">
             <div class="nodo nodo-a">A</div>
             <div class="nodo nodo-b">B</div>
@@ -35,6 +38,12 @@
             <div class="peso peso-6"><p id="6"></p></div>
             <div class="peso peso-7"><p id="7"></p></div>
         </div>
+        <div class="inputs">
+            <label for="respuesta">¿Cuál ruta debería seguir Lorei?</label>
+            <input type="text" id="respuesta">
+            <button class="primary-button">Comprobar</button>
+        </div>
+        <a href="./index.html" class="return-home">Regresar</a>
     </div>
     <script src="./src/javascript/grafo.js"></script>
 </body>

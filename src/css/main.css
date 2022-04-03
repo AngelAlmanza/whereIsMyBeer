@@ -119,6 +119,10 @@ footer p{
 
 /* Estilos de la pestaña de juego */
 
+.character-container img{
+    width: 250px;
+}
+
 .graph-container {
     width: 600px;
     height: 400px;
@@ -259,4 +263,42 @@ footer p{
 .peso-7 {
     top: 260px;
     left: 400px;
+}
+
+.inputs {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.inputs label {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.inputs input {
+    height: 20px;
+    text-align: center;
+    border: 1px solid var(--color-tres);
+    background-color: var(--color-dos);
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+
+
+.return-home {
+    width: 150px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 1.6rem;
+    color: black;
+    background-color: var(--color-tres);
 }
