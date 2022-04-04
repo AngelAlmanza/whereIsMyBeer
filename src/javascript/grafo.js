@@ -1,16 +1,9 @@
 class Grafo {
     constructor () {
-        this.data = {
-            //  A B C D E F
-            A: [],
-            B: [],
-            C: [],
-            D: [],
-            E: [],
-            F: [],
-        };
+        this.data = [];
         this.rellenar();
         this.alterarGrafo();
+        this.caminoCorto = this.dijkstra(this.data, 0);
     }
 
     generarPeso() {
@@ -18,12 +11,12 @@ class Grafo {
     }
 
     rellenar() {
-        this.data.A = [Infinity, this.generarPeso(), Infinity, Infinity, Infinity, Infinity];
-        this.data.B = [this.data.A[1], Infinity, this.generarPeso(), Infinity, this.generarPeso(), Infinity];
-        this.data.C = [Infinity, this.data.B[2], Infinity, this.generarPeso(), Infinity, this.generarPeso()];
-        this.data.D = [Infinity, Infinity, this.data.C[3], Infinity, this.generarPeso(), this.generarPeso()];
-        this.data.E = [Infinity, this.data.B[4], Infinity, this.data.D[4], Infinity, Infinity];
-        this.data.F = [Infinity, Infinity, this.data.C[5], this.data.D[5], Infinity, Infinity];
+        this.data[0] = [0, this.generarPeso(), Infinity, Infinity, Infinity, Infinity];
+        this.data[1] = [this.data[0][1], Infinity, this.generarPeso(), Infinity, this.generarPeso(), Infinity];
+        this.data[2] = [Infinity, this.data[1][2], Infinity, this.generarPeso(), Infinity, this.generarPeso()];
+        this.data[3] = [Infinity, Infinity, this.data[2][3], Infinity, this.generarPeso(), this.generarPeso()];
+        this.data[4] = [Infinity, this.data[1][4], Infinity, this.data[3][4], Infinity, Infinity];
+        this.data[5] = [Infinity, Infinity, this.data[2][5], this.data[3][5], Infinity, Infinity];
     }
 
     alterarGrafo() {
@@ -34,13 +27,13 @@ class Grafo {
         const peso5 = document.getElementById('5');
         const peso6 = document.getElementById('6');
         const peso7 = document.getElementById('7');
-        peso1.innerText = this.data.A[1];
-        peso2.innerText = this.data.B[2];
-        peso3.innerText = this.data.B[4];
-        peso4.innerText = this.data.E[3];
-        peso5.innerText = this.data.C[3];
-        peso6.innerText = this.data.C[5];
-        peso7.innerText = this.data.D[5];
+        peso1.innerText = this.data[0][1];
+        peso2.innerText = this.data[1][2];
+        peso3.innerText = this.data[1][4];
+        peso4.innerText = this.data[4][3];
+        peso5.innerText = this.data[2][3];
+        peso6.innerText = this.data[2][5];
+        peso7.innerText = this.data[3][5];
     }
 
     dijkstra(path,index){
@@ -87,7 +80,24 @@ class Grafo {
             throw new Error("Los datos son incorrectos")
         }
     }
+
+    comprobarRespuesta(respuesta, posicion) {
+        return respuesta == this.caminoCorto[posicion];
+    }
 }
 
 const graph = new Grafo();
+
+const inputRespuesta = document.getElementById('respuesta');
+const button = document.getElementById('comprobar');
+button.addEventListener('click', () => {
+    if (graph.comprobarRespuesta(inputRespuesta.value, 5)) {
+        alert('Conseguido');
+        const contenedor = document.getElementById('body');
+        contenedor.style = 'opacity: 0.1';
+    } else {
+        alert('Perdiste');
+    }
+});
+
 console.log(graph);

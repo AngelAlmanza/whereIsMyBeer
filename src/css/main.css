@@ -141,6 +141,7 @@ footer p{
     z-index: 1;
     background-color: var(--color-uno);
     border: 1px solid var(--color-dos);
+    font-size: 2rem;
 }
 
 .nodo-a {
@@ -301,4 +302,5 @@ footer p{
     font-size: 1.6rem;
     color: black;
     background-color: var(--color-tres);
+    margin-bottom: 150px;
 }
