@@ -288,8 +288,6 @@ footer p{
     margin-bottom: 10px;
 }
 
-
-
 .return-home {
     width: 150px;
     height: 30px;
@@ -303,4 +301,30 @@ footer p{
     color: black;
     background-color: var(--color-tres);
     margin-bottom: 150px;
+}
+
+/* .container {
+    display: none;
+} */
+
+.win, .lose {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.win img, .lose img {
+    width: 300px;
+    margin-top: 200px;
+    margin-bottom: 50px;
+}
+
+.win p, .lose p {
+    font-size: 2.4rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 100px;
 }

@@ -1,3 +1,4 @@
+//import Win from "./Win.js";
 class Grafo {
     constructor () {
         this.data = [];
@@ -84,20 +85,68 @@ class Grafo {
     comprobarRespuesta(respuesta, posicion) {
         return respuesta == this.caminoCorto[posicion];
     }
+
+    win() {
+        const winContainer = document.createElement('div');
+        winContainer.className = 'win';
+
+        const img = document.createElement('img');
+        img.src = './src/images/lorei-win.png';
+
+        const p = document.createElement('p');
+        p.textContent = 'HAS GANADO FELICIDADES!!!!';
+
+        const a = document.createElement('a');
+        a.href = './index.html';
+        a.className = 'return-home';
+        a.textContent = 'Regresar';
+
+        winContainer.appendChild(img);
+        winContainer.appendChild(p);
+        winContainer.appendChild(a);
+
+        return winContainer;
+    }
+
+    lose() {
+        const loseContainer = document.createElement('div');
+        loseContainer.className = 'lose';
+
+        const img = document.createElement('img');
+        img.src = './src/images/lorei-win.png';
+
+        const p = document.createElement('p');
+        p.textContent = 'Has perdido, mas suerte la proxima vez 😥';
+
+        const a = document.createElement('a');
+        a.href = './index.html';
+        a.className = 'return-home';
+        a.textContent = 'Regresar';
+
+        loseContainer.appendChild(img);
+        loseContainer.appendChild(p);
+        loseContainer.appendChild(a);
+
+        return loseContainer;
+    }
 }
 
 const graph = new Grafo();
 
 const inputRespuesta = document.getElementById('respuesta');
 const button = document.getElementById('comprobar');
+const container = document.getElementById('result-container');
+const game = document.getElementById('container');
+
 button.addEventListener('click', () => {
     if (graph.comprobarRespuesta(inputRespuesta.value, 5)) {
-        alert('Conseguido');
-        const contenedor = document.getElementById('body');
-        contenedor.style = 'opacity: 0.1';
+        game.style.display = 'none';
+        container.appendChild(graph.win());
     } else {
-        alert('Perdiste');
+        game.style.display = 'none';
+        container.appendChild(graph.lose());
     }
 });
 
 console.log(graph);
+console.log('Hello World');
